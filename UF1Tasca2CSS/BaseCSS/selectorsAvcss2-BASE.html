@@ -6,26 +6,48 @@
 <style>
   table, th, td{
     border-style: solid;
+    border-color: black;
+    border-width: 1px;
   }
-  tr th{
+  th{
     background-color: aqua;
+    padding: 6px;
+    padding-left: 23px;
   }
-  .yellow td{
+
+  .yellow{
     background-color: rgb(245, 245, 142);
   }
+
   td {
     text-align: right;
+    padding: 2px;
   }
 
-
-  .yellow,tr:hover{
+  tr:hover{
     background-color: yellow;
   }
+
+  .yellow:hover{
+    background-color: yellow;
+  }
+  .none th{
+    background-color: white;
+    padding: 6px;
+  }
+
+  img{
+    position:fixed;
+    left: 10px;
+    width: 20px;
+    margin-left: 2px;
+}
+
 </style>
 </head>
 <body>
 <table>
-  <tr>
+  <tr class="none">
     <th>Cambio</th>
     <th>Compra</th>
     <th>Venta</th>
@@ -33,28 +55,28 @@
     <th>Mínimo</th>
   </tr>
   <tr class="yellow">
-    <th class="euro">Euro/Dolar</th>
+    <th class="euro"> <img src="euro.png" alt="">Euro/Dolar</th>
     <td>1.25</td>
     <td>1.25</td>
     <td>1.25</td>
     <td>1.24</td>
   </tr>
   <tr>
-    <th class="dolar">Dolar/Yen</th>
+    <th class="dolar"> <img src="dolar.png" alt="">Dolar/Yen</th>
     <td>119.01</td>
     <td>119.05</td>
     <td>119.82</td>
     <td>119.82</td>
   </tr>
   <tr class="yellow">
-    <th class="libra">Libra/Dolar</th>
+    <th class="libra"> <img src="libra.png" alt="">Libra/Dolar</th>
     <td>1.86</td>
     <td>1.86</td>
     <td>1.86</td>
     <td>1.85</td>
   </tr>
   <tr>
-    <th class="yen">Yen/Euro</th>
+    <th class="yen"> <img src="yen.png" alt="">Yen/Euro</th>
     <td>0.67</td>
     <td>0.67</td>
     <td>0.66</td>
