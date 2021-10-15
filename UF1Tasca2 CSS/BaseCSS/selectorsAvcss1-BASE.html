@@ -10,9 +10,14 @@
 <meta charset="utf-8" />
 <title>HTML &amp; CSS: Curso práctico avanzado</title>
 <style>
-    h2 p{
-        color: red;
-        padding: 12px;
+    h2::first-letter{
+        font-size: 180%;
+    }
+    h2 + p::first-letter{
+        padding-left: 2em;
+    }
+    a:before{
+        content: "→";
     }
 </style>
 </head>

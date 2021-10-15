@@ -3,6 +3,25 @@
 <head>
 <meta charset="utf-8" />
 <title>Ejemplo de selectores avanzados</title>
+<style>
+  table, th, td{
+    border-style: solid;
+  }
+  tr th{
+    background-color: aqua;
+  }
+  .yellow td{
+    background-color: rgb(245, 245, 142);
+  }
+  td {
+    text-align: right;
+  }
+
+
+  .yellow,tr:hover{
+    background-color: yellow;
+  }
+</style>
 </head>
 <body>
 <table>
@@ -13,7 +32,7 @@
     <th>Máximo</th>
     <th>Mínimo</th>
   </tr>
-  <tr>
+  <tr class="yellow">
     <th class="euro">Euro/Dolar</th>
     <td>1.25</td>
     <td>1.25</td>
@@ -27,7 +46,7 @@
     <td>119.82</td>
     <td>119.82</td>
   </tr>
-  <tr>
+  <tr class="yellow">
     <th class="libra">Libra/Dolar</th>
     <td>1.86</td>
     <td>1.86</td>
