@@ -4,41 +4,39 @@
     <meta charset="utf-8">
 	<title>Maquetacio-2</title>
   <style>
-      #encabezado{
-      border: solid yellow 2px;
-      height: 90px;
-      padding: 5px;
-
+      body{padding-left: 10%;}
+      form{padding-left: 80%;}
+      #menu > li {
+        float: left;
+        padding-right: 5%;
+        list-style: none;
+        width: 0%;
       }
-      #menu{
-      margin-top:20px;
-      float:right;
-      
+      #encabezado{
+          border-color: yellow;
+          border-style: solid; 
+          border-width: 1px;
       }
       #izquierda{
-      min-height: 300px;
-      border-radius:5px;
-      border: 1px solid #848484;
+        float:left;
+        width: 25%;
       }
-      #izquierda h3{
-      text-align: center;
-      }
-      #derecha h3{
-      text-align: center;
+      #medio{
+        float:left;
+        width: 49%;
       }
       #derecha{
-      color:#000;
-      min-height: 300px;
-      border-radius:5px;
-      border: 1px solid #848484;
-      padding: 10px
+        float:left;
+        width: 24%;
+      }
+      #cuerpo{
+        padding-top: 2%;
       }
       #footer{
-      background: #858585;
+      padding-top: 100%;
       height: 50px;
-      text-align: center;
       margin-top: 10px;
-      color:#fff;
+      color:#000;
       }
   </style>
 </head>
@@ -84,7 +82,7 @@
   <p><a href="#">Més...</a></p>
   </div>
 
-  <div id="derecha">
+  <div id="medio">
   <h2>Apartat 1</h2>
 	
   <p>Apartat 1 uno, abc abcd abcde abcdef  abc abcd abcde abcdef  abc abcd abcde abcdef  abc abcd abcde abcdef  abc abcd abcde abcdef  abc abcd abcde abcdef  abc abcd abcde abcdef  abc abcd abcde abcdef  abc abcd abcde abcdef.</p>
@@ -97,7 +95,9 @@
   <p>Abc cc ab ba abcddee abc  ab ba abcddee abc  ab ba abcddee abc  ab ba abcddee abc  ab ba abcddee abc  ab ba abcddee abc  ab ba abcddee abc  ab ba abcddee abc  ab ba abcddee abc  ab ba abcddee abc.</p>
   <p>Ab ab ba aaaa abc abde  ab ba aaaa abc abde  ab ba aaaa abc abde  ab ba aaaa abc abde  ab ba aaaa abc abde  ab ba aaaa abc abde </p>
   <p><a href="#">Més...</a></p>
+</div>
 
+    <div id="derecha">
   <h2>Altres 1</h2>
   <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</p>
   <p><a href="#">Més...</a></p>
