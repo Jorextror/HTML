@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Pseudoclasses</title>
+<meta charset="utf-8"/> 
+<style>
+    body{margin:0;padding:0;background-color: #222;}
+    h1{text-align: center;color:#aaa;}
+
+    div.luz>div.esfera{
+        position: absolute;
+        margin: 361px;
+        margin-top: 0px;
+
+        width: 200px;
+        height: 200px;
+        background: radial-gradient;
+        background-color: #0ac0bb;
+        border-radius: 50%;
+    }
+   
+    div.luz>div.sombra{
+        position: absolute;
+        margin: 361px;
+        margin-top: 80px;
+
+        width: 200px;
+        height: 20px;
+        background: radial-gradient;
+        background-color: #0ac0bb;
+        border-radius: 50%;
+        opacity: 0;
+    }
+
+
+    div.luz>div.esfera:hover {
+        position: absolute;
+        margin: 361px;
+        margin-top: 0px;
+
+        width: 200px;
+        height: 200px;
+        background: radial-gradient;
+        background-color: #0ac0bb;
+        border-radius: 50%;
+
+        box-shadow: inset -55px -55px 50px #122d2e;
+        z-index: 1;
+    }
+
+    div.luz>div.sombra:hover {
+        position: absolute;
+        margin: 361px;
+        margin-top: 80px;
+
+        width: 200px;
+        height: 20px;
+        background: radial-gradient;
+        background-color: #0ac0bb;
+        border-radius: 50%;
+
+        box-shadow: 100px 100px 12px black;
+        z-index: -1;
+    }
+
+    div.luz>img{
+        opacity: 0;
+    } 
+
+    div.luz>img:hover{
+        opacity: 1;
+    }
+</style>
+</head>
+<body>
+    <h1>Creació d'una esfera amb ombrejat (Pseudoclasses)</h1>
+    <div class="luz">
+        <img src="linterna-luz.png" alt="linterna-luz" width="420" height="420">
+        <div class="esfera" ></div>
+        <div class="sombra"></div>
+    </div>
+</body>
+</html>
