@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  </head>
+  <style>
+    body{margin-left: 25%}
+    .required{color: red;}
+    li{
+      font-weight: bold;
+      list-style: none;
+    }
+    input{
+      width: 300px;
+      padding: 5px 5px;
+      margin-bottom: 10px;
+    }
+    .field-select{
+      width: 315px;
+      padding: 5px 5px;
+      margin-bottom: 10px;
+    }
+    .field-divided{width: 139px;}
+    .field-textarea{
+      width: 300px;
+      height: 100px;
+      padding: 5px 5px;
+      margin-bottom: 10px;
+    }
+    input[type=submit] {
+      width: 80px;
+      background-color: #4ca0af;
+      color: white;
+      padding: 14px 10px;
+      margin: 5px 0;
+      border: none;
+      cursor: pointer;
+    }
+    input[type=submit]:active {
+      background-color: #75858f;
+      color: black;
+    }
+  </style>
+  <body>
+    <form>
+      <ul class="form-style-1">
+        <li><label>Nom Complet <span class="required">*</span></label><br>
+          <input name="field1" class="field-divided" placeholder="Nom" type="text">&nbsp;
+          <input name="field2" class="field-divided" placeholder="Cognom" type="text"></li>
+        <li> <label>Email <span class="required">*</span></label><br> <input name="field3"
+
+            class="field-long" type="email"> </li>
+        <li> <label>Tema</label><br>
+          <select name="field4" class="field-select">
+            <option value="Consulta">Consulta</option>
+            <option value="Queixa">Queixa</option>
+            <option value="General">General</option>
+          </select>
+        </li>
+        <li> <label>Missatge <span class="required">*</span></label> <br>
+          <textarea name="field5" id="field5" class="field-long field-textarea"></textarea> 
+        </li>
+        <li> <input value="Enviar" type="submit"> </li>
+      </ul>
+    </form>
+  </body>

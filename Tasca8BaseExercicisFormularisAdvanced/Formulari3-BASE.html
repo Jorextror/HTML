@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Formulari</title>
+<meta charset="utf-8">
+<style>
+    body{
+        background-color: black;
+    }
+    #formulari{
+        margin: 25%;
+        margin-top: 0%;
+        padding: 5px 50px;
+        border: solid 1px red;
+        width: 600px;
+        text-align: center;
+    }
+    #formulari input, select, textarea{
+        background-color: gray;
+        color: white;
+        width: 90%;
+        border: none;
+        margin: 10px;
+        padding: 10px;
+    }
+    #formulari select{
+        width: 93%;
+    }
+    #formulari .botoSubmit{
+        width: 80px;
+        cursor: pointer;
+        text-align: none;
+    }
+    #formulari [type=submit]{
+        margin-left: -60px;
+    }
+    #formulari .botoSubmit:hover{
+        border: solid 1px red;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+    <form class="formulari" id="formulari" action="" method="get">
+           <input type="text" class="input1" placeholder="Text Input" id="input1" />
+           <input type="text" class="input2" value="Text Input focused" id="input2" autofocus />
+           <textarea id="textarea1">Textarea</textarea>
+           <select id="select1">
+            <option value="op1">Select...</option>
+            <option value="op2">Another</option>
+           </select>
+           <input type="submit" class="botoSubmit" value="Submit" />
+           <input type="reset" class="botoSubmit" value="Cancel" />
+    </form>
+</body>
+</html>
