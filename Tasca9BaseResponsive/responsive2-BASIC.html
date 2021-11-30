@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <!--
     Fins a 600 px: no s'aplica disseny a la pàgina web.
     A partir de 600 px i fins a 1200 px: un disseny a dues columnes.
@@ -10,12 +9,49 @@ Mireu bé la captura de pantalla. Algunes pistes:
     * Fins a 600 px: les dades del llibre NO es mostren com una llista, es mostren tots junts en una sola línia separada per ";".
     * A partir de 600 px i fins a 1200 px: els apartats del contingut del llibre es mostres en tres columnes.
 -->
-
 <html>
 <head>
 <meta charset="utf-8" />
 <title>HTML &amp; CSS: Curso práctico avanzado</title>
 </head>
+<style>
+body {
+  width: 82%;
+  margin: auto;
+}
+@media (min-width: 1201px) {
+  h1 {text-align:center}
+  .dades_llibre, .descripcio_llibre, .contingut_llibre {
+    float: left;
+    padding: 0;
+    margin: 0;
+    width: 30%;
+  }
+}
+@media (min-width: 601px) and (max-width: 1200px) {
+  h1 {text-align: center}
+  .dades_llibre, .altres_dades {
+    float: left;
+    padding: 0;
+    margin: 0;
+    width: 30%;
+  }
+  .altres_dades {
+    width: 70%;
+  }
+}
+@media (max-width: 600px) {
+  .dades_llibre ul {
+    padding-left: 0;
+  }
+  .dades_llibre li {
+    display: inline;
+  }
+  .dades_llibre li:after {
+    content: "; ";
+  }
+}
+</style>
 <body>
 <h1>HTML &amp; CSS: Curso práctico avanzado</h1>
 

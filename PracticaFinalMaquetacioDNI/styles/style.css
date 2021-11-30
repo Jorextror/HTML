@@ -1,0 +1,62 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+div{
+    border: dotted 1px;
+}
+.tarjeta{
+    margin: 50px 200px;
+    border-radius: 10px;
+    background-color:bisque;
+    border: solid 3px rgb(238, 213, 182) ;
+}
+.header{
+    margin: 5px;
+    margin-left: 50px;
+    padding-bottom: 4px;
+
+}
+.pais{
+    float: left;
+}
+.docu{
+    text-align: center;
+    margin-left: 230px;
+}
+.footer{
+    text-align: center;
+}
+.cos{
+    margin: 5px;
+}
+
+.izquierda{
+    margin: 5px;
+    float: left;
+    margin-right: 10px;
+}
+.dreta{
+    margin-left: 265px;
+}
+
+.bandera{
+    float: right;
+    background-color: lightseagreen;
+    border: solid 1px blue;
+    border-radius: 3px;
+    width: 50px;
+    text-align: center;
+}
+.firma{
+    margin: 0px 50px 0px 120px;
+}
+
+.info{
+    margin: 10px 0px 10px 0px ;
+}
+
+.titol{
+    float: left;
+    height: 16px;
+}
