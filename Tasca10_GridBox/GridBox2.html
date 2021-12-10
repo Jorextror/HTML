@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>GridBox</title>
+        <style>
+            #id_cap { grid-area: header;}
+            #id_nav { grid-area: nav;}
+            #id_art { grid-area: main;}
+            #id_inf { grid-area: info;}
+            #id_peu { grid-area: footer;}
+            #main {
+                display: grid;
+                grid-gap: 10px;
+                grid-template-columns: 740px;
+                grid-template-rows: 100px 100px 440px 150px 100px;
+                grid-template-areas: 
+                    'header'
+                    'nav'
+                    'main'
+                    'info'
+                    'footer';    
+            }                      
+
+            .border{
+                border: solid 1px black;
+                border-radius: 3px;
+                padding: 5px;
+            }
+            .titol{
+                font-size: 2em;
+                color: white;
+                font-weight: bold;
+                padding: 30px;
+            }
+            .subtitol{
+                font-size: 1.5em;
+                color: white;
+                padding: 10px;
+                padding-left: 30px;
+            }
+            .blau{
+                background-color: rgba(0, 174, 255, 0.788);
+            }
+            .morado{
+                background: rgb(160, 78, 255);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <div id="id_cap" class="border titol morado">Capçalera</div>
+            <div id="id_nav" class="border blau">Navegació</div>
+            <div id="id_art" class="border">Articles</div>
+            <div id="id_inf" class="border blau">Info Articles</div>
+            <div id="id_peu" class="border subtitol morado">Peu de pàgina</div>
+        </div>
+    </body>
+</html>
