@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexBox7</title>
+</head>
+<style>
+.wrapper{
+  display: flex;
+  padding: 2em;
+  font-weight: bold;
+  flex-direction:row;
+  flex-wrap:wrap;
+}
+.header{
+  background-color: rgb(254,100,71);
+  padding: 5px;
+  width: 100%;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 80px;
+  vertical-align: middle;
+  align-items: center;
+}
+.aside-1{
+  background-color: rgb(255,141,1);
+  padding: 5px;
+  flex-grow: 2;
+  margin: 5px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+.main{
+  background-color: rgb(1,191,254);
+  padding: 5px;
+  height: 500px;
+  flex-grow: 8;
+  order: 1;
+  margin: 5px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+.aside-2{
+  background-color: rgb(254,2,251);
+  padding: 5px;
+  flex-grow: 2;
+  order: 2;
+  margin: 5px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+.footer{
+  background-color: rgb(144,237,143);
+  padding: 5px;
+  order: 3;
+  width: 100%;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 40px;
+}
+</style>
+<body>
+    <div class="wrapper">
+        <header class="header">Capçañera</header>
+        <article class="main">Article</article>
+        <aside class="aside aside-1">Navegació</aside>
+        <aside class="aside aside-2">Info article</aside>
+        <footer class="footer">Peu de pàgina</footer>
+    </div>
+</body>
+</html>

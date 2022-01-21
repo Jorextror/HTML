@@ -1,16 +1,61 @@
 <html>
 <head>
 <style>
-body {
-  padding: 2em; 
+.wrapper{
+  display: flex;
+  padding: 2em;
+  font-weight: bold;
+  flex-direction:row;
+  flex-wrap:wrap;
+}
+.header{
+  background-color: rgb(254,100,71);
+  padding: 5px;
+  width: 100%;
+  text-align: center;
+}
+.aside-1{
+  background-color: rgb(255,141,1);
+  padding: 5px;
+  flex-grow: 2;
+  text-align: center;
+}
+.main{
+  background-color: rgb(1,191,254);
+  padding: 5px;
+  flex-grow: 8;
+  order: 1;
+
+}
+.aside-2{
+  background-color: rgb(254,2,251);
+  padding: 5px;
+  flex-grow: 2;
+  order: 2;
+  text-align: center;
+
+}
+.footer{
+  background-color: rgb(144,237,143);
+  padding: 5px;
+  order: 3;
+  width: 100%;
+  text-align: center;
+
+}
+@media (max-width: 800px) {
+  .main{
+    order: 0;
+    width: 100%;
+    text-align: center;
+  }
 }
 
-background-color: rgb(254,100,71);
-background-color: rgb(255,141,1);
-background-color: rgb(1,191,254);
-background-color: rgb(254,2,251);
-background-color: rgb(144,237,143);
-
+@media (max-width: 600px) {
+  .aside-2{
+    width: 100%;
+  }
+}
 </style>
 </head>
 <body>

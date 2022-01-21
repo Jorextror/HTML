@@ -1,0 +1,154 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexBox8</title>
+    <style>
+.wrapper{
+    display: flex;
+    padding: 2em;
+    font-weight: bold;
+    flex-direction:row;
+    flex-wrap:wrap;
+}
+.header{
+  background-color: rgb(254,100,71);
+  padding: 5px;
+  width: 100%;
+  text-align: center;
+}
+.aside-1{
+    background: deepskyblue;
+  padding: 5px;
+  flex-grow: 2;
+  text-align: center;
+}
+.main{
+    background-color: rgb(254,100,71);
+  padding: 5px;
+  flex-grow: 8;
+  height: 550px;
+  order: 1;
+
+}
+.aside-2{
+    background: deepskyblue;
+  padding: 5px;
+  flex-grow: 2;
+  order: 2;
+  text-align: center;
+
+}
+.footer{
+  background-color: rgb(144,237,143);
+  padding: 5px;
+  order: 3;
+  width: 100%;
+  text-align: center;
+
+}
+@media (max-width: 800px) {
+  .main{
+    order: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .aside-2{
+    flex-grow: 8;
+  }
+}
+/* nav horizontal */
+        .nav-horizontal nav {
+            background: deepskyblue;
+            display:flex;
+            flex-direction:row-reverse;
+            flex-wrap:wrap;
+            justify-content:flex-start;
+        }
+
+        .nav-horizontal nav a {
+            text-decoration: none;
+            display: block;
+            line-height:1.5em;
+            padding: 0em 1em;
+            color: white;
+            font-weight: bold;
+        }
+        .nav-horizontal nav li{
+            display:inline-block;
+        }
+/* nav lateral */
+        .nav-lateral nav {
+            background: deepskyblue;
+            display:flex;
+            flex-direction:column;
+            height: 550px;
+            flex-wrap:wrap;
+            justify-content:flex-start;
+        }
+
+        .nav-lateral nav a {
+            text-decoration: none;
+            display: block;
+            line-height:1.5em;
+            padding: 1em 0em;
+            color: black;
+            font-weight: bold;
+        }
+        .nav-lateral nav li{
+            display:inline-block;
+        }
+
+    article {
+        flex-grow: 1;
+        width: 45%;
+    }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="nav-horizontal" >
+                <nav>
+                    <ul>
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Products</a></li>
+                      <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <article class="main">
+            <article class="breaking">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/earth-vs-the-flying-saucers.jpg" alt="Photograph of a flying saucer over the US Capitol building">
+                  <h1>Washington D.C. Attacked By Flying Saucers</h1>
+                  <h2>Dateline Washington D.C.</h2>
+                  <h3>Frank Bragg reporting</h3>
+                  <p>The country was brought to a standstill today when flying saucers - presumably from Mars, although Venusians have also been suspected - appeared over the nation's capital, intent on destruction. Curiously, they only attacked Pennsylvania Avenue, and have not appeared elsewhere in the country.</p>
+                </article>
+        </article>
+
+        <aside class="aside aside-1">
+            <div class="nav-lateral" >
+                <nav>
+                    <ul>
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Products</a></li>
+                      <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <aside class="aside aside-2">Aside 2</aside>
+        <footer class="footer">Footer</footer>
+    </div>
+</body>
+</html>

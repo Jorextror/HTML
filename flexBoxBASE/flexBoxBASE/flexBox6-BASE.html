@@ -1,18 +1,42 @@
 <html>
 <head>
 <style>
-body {
-  padding: 2em; 
+.wrapper {
+  display: flex;
+  padding: 2em;
+  font-weight: bold;
+  flex-direction:row;
+  flex-wrap:wrap;
 }
 .header{
   background-color: rgb(254, 100, 71);
-
-  background-color: rgb(255, 215, 1);
-  background-color: rgb(1, 191, 254);
-  background-color: rgb(144, 237, 143);
+  padding: 5px;
+  width: 100%;
+  text-align: center;
 }
-
-
+.lateral{
+  background-color: rgb(255, 215, 1);
+  padding: 5px;
+  flex-grow: 2;
+}
+.main{
+  background-color: rgb(1, 191, 254);
+  padding: 5px;
+  flex-grow: 8;
+  order: 1;
+}
+.footer{
+  background-color: rgb(144, 237, 143);
+  padding: 5px;
+  order: 3;
+  width: 100%;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .lateral{
+    width: 100%;
+  }
+}
 </style>
 </head>
 <body>
