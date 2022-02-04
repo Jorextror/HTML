@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cas Pràctic Bootstrap</title>
+ 
+<!-- Inclusió del framework Bootstrap -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ 
+<!-- Estils que modifiquen i/o amplien el framework -->
+<style>
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+width: 70%;
+margin: auto;
+}
+.carousel-control.right {
+background-image:linear-gradient(to right, #18bc9c 0%, #DBFBF4 100%);
+}
+.carousel-control.left {
+background-image:linear-gradient(to left, #18bc9c 0%, #DBFBF4 100%);
+}
+ 
+.navbar-default {
+background-color: #18bc9c;
+}
+.navbar-default .navbar-nav > li > a {
+color: #DBFBF4;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+color: #fff;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+color: #fff;
+background-color: #0E705C;
+}
+ 
+.btn-primary {
+background-color:#18bc9c;
+border-color: #0E705C
+}
+.btn-primary:hover, .btn-primary:active , .btn-primary:focus, .btn-primary:active:focus{
+background-color:#0E705C;
+border-color: #041E18;
+}
+ 
+.panel-footer {
+color: #fff;
+background-color: #18bc9c;
+}
+ 
+div[class*="row"] > h2, div[class*="col-"] > h3 {
+color:#999999;
+}
+ 
+</style>
+</head>
+<body>
+ 
+<section id="header" class="container-fluid">
+<div class="row">
+<nav class="navbar navbar-default">
+<div class="container-fluid">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+<span class="sr-only">Menú</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav">
+<li class="active"><a href="#">Inici</a></li>
+<li><a href="#seccio2">Cursos</a></li>
+</ul>
+</div>
+</div>
+</nav>
+</div>
+</section>
+ 
+<section id="seccio1" class="container-fluid">
+<div class="row">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<!-- Indicadors -->
+<ol class="carousel-indicators">
+<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+<li data-target="#myCarousel" data-slide-to="1"></li>
+<li data-target="#myCarousel" data-slide-to="2"></li>
+</ol>
+ 
+<!-- slides -->
+<div class="carousel-inner" role="listbox">
+<div class="item active">
+<img src="./img/imatge1.jpg" alt="ESO i Batxillerat" width="460" height="345">
+<div class="container">
+<div class="carousel-caption">
+<h2>Acadèmia <strong>esTUdia</strong></h2>
+<h3>Us facilitem l'obtenció de títols oficials.</h3>
+<p class="glyphicon glyphicon-thumbs-up"></p>
+<p><a class="btn btn-lg btn-primary" href="#seccio2" role="button">Més informació</a></p>
+</div>
+</div>
+</div>
+ 
+<div class="item">
+<img src="./img/imatge1.jpg" alt="Informàtica" width="460" height="345">
+<div class="container">
+<div class="carousel-caption">
+<h2>Acadèmia <strong>esTUdia</strong></h2>
+<h3>Assoleix les competències TIC.</h3>
+<p class="glyphicon glyphicon-thumbs-up"></p>
+<p><a class="btn btn-lg btn-primary" href="#seccio2" role="button">Més informació</a></p>
+</div>
+</div>
+</div>
+ 
+<div class="item">
+<img src="./img/imatge1.jpg" alt="Idiomes" width="460" height="345">
+<div class="container">
+<div class="carousel-caption">
+<h2>Acadèmia <strong>esTUdia</strong></h2>
+<h3>Millora la teva fluència en llengües extrangeres.</h3>
+<p class="glyphicon glyphicon-thumbs-up"></p>
+<p><a class="btn btn-lg btn-primary" href="#seccio2" role="button">Més informació</a></p>
+</div>
+</div>
+</div>
+ 
+ 
+<!-- Controls a dreta i esquerra -->
+<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+<span class="sr-only">Anterior</span>
+</a>
+<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+<span class="sr-only">Següent</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+ 
+<section id="seccio2" class="container">
+    <div class="row text-center">
+    <h2>Preparem el vostre futur</h2>
+    <hr class="small" />
+    </div>
+    <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+    <h3>Títols homologats</h3>
+    <figure></figure>
+    <p>Organitzem cursos per completar la vostra formació reglada. Per això us ajudem a preparar la prova d'accés a grau mig i superior, així com cursos de reforç per a batxillerat.</p>
+    <a href="" class="btn btn-primary">Més...</a>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+    <h3>Competències TIC</h3>
+    <figure></figure>
+    <p>Oferim la certifiació de nivell mitjà i avançat per tal d'acreditar la vostra competència TIC. Alhora, organitzem cursos específics de programació i disseny web. </p>
+    <a href="" class="btn btn-primary">Més...</a>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+    <h3>Idiomes</h3>
+    <figure></figure>
+    <p>Avui en dia és indispensable poder demostrar un nivell intermedi o avançat en llengües estangeres. Segueix el nostre pla per aconseguir millorar el teu nivell.</p>
+    <a href="" class="btn btn-primary">Més...</a>
+    </div>
+    </div>
+    <div class="row text-center">
+    <hr class="small" />
+    </div>
+</section>
+ 
+<section class="container-fluid">
+<div class="row">
+<footer class="panel-footer">
+<p class="text-center">Acadèmia esTUdia</p>
+</footer>
+</div>
+</section>
+ 
+</body>
+</html>
