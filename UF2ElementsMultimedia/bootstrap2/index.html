@@ -11,181 +11,193 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
  
 <!-- Estils que modifiquen i/o amplien el framework -->
-<style>
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-width: 70%;
-margin: auto;
-}
-.carousel-control.right {
-background-image:linear-gradient(to right, #18bc9c 0%, #DBFBF4 100%);
-}
-.carousel-control.left {
-background-image:linear-gradient(to left, #18bc9c 0%, #DBFBF4 100%);
-}
- 
+<style type="text/css">
+/* Fons de la barra de navegacio */
 .navbar-default {
-background-color: #18bc9c;
-}
-.navbar-default .navbar-nav > li > a {
-color: #DBFBF4;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-color: #fff;
-}
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-color: #fff;
-background-color: #0E705C;
-}
- 
-.btn-primary {
-background-color:#18bc9c;
-border-color: #0E705C
-}
-.btn-primary:hover, .btn-primary:active , .btn-primary:focus, .btn-primary:active:focus{
-background-color:#0E705C;
-border-color: #041E18;
-}
- 
-.panel-footer {
-color: #fff;
-background-color: #18bc9c;
-}
- 
-div[class*="row"] > h2, div[class*="col-"] > h3 {
-color:#999999;
-}
+    background-color: rgb(24, 188, 156);
+    }    
+  /* Quan passem el ratolí per sobre o arriba el focus, canviem color item a la barra */
+  .navbar-default .navbar-nav > li > a:focus {
+    color: rgb(255, 255, 255);
+    }
+  /* Colors dels botons */
+  .navbar-default .navbar-nav > li > a {
+    color: rgb(219, 251, 244);
+    }
+    .navbar-default .navbar-nav > li > a:hover,
+    .navbar-default .navbar-nav > .active > a,
+    .navbar-default .navbar-nav > .active > a:hover,
+    .navbar-default .navbar-nav > .active > a:focus {
+    color: rgb(255, 255, 255);
+    background-color: rgb(14, 112, 92);
+    }
+  /* Colors dels botons amb ratolí o focus, mancaria l'activacio */
+  .btn-primary:hover, .btn-primary:active , .btn-primary:focus, .btn-primary:active:focus{
+    background-color:rgb(14, 113, 93);
+    border-color: rgb(4, 30, 24);
+    }
+  /* Color de la card del footer */
+  .panel-footer {
+    color: rgb(255, 255, 255);
+    background-color: rgb(24, 188, 156);
+    }
+  /* Text de la seccio central */
+  div[class*="row"] > h2, div[class*="col-"] > h3 {
+    color:rgb(153, 153, 153);
+    }
+  /* S'ha de tocar bootstrap.css (No el MIN!) per aconseguir canvi de color a la lletra de la NavBar */
+  .btn-primary {
+    background-color:rgb(24, 188, 156);
+    border-color: rgb(14, 112, 92)
+    }
+  /* Gradient als controls del carousel */
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+  width: 70%;
+  margin: auto;
+  }
+  .carousel-control.right {
+    background-image:linear-gradient(to right, #18bc9c 0%, #DBFBF4 100%);
+  }
+  .carousel-control.left {
+    background-image:linear-gradient(to left, rgb(24, 188, 156) 0%, rgb(219, 251, 244) 100%);
+  }
  
 </style>
 </head>
 <body>
- 
-<section id="header" class="container-fluid">
-<div class="row">
-<nav class="navbar navbar-default">
-<div class="container-fluid">
-<div class="navbar-header">
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-<span class="sr-only">Menú</span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-</div>
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-<ul class="nav navbar-nav">
-<li class="active"><a href="#">Inici</a></li>
-<li><a href="#seccio2">Cursos</a></li>
-</ul>
-</div>
-</div>
-</nav>
-</div>
-</section>
- 
+   <!-- CAPÇALERA -->
+  <!-- Contenidor fluid pq ocupi tota la pantalla -->      
+<header id="header" class="container-fluid">
+      <!-- Afegim barra de navegacio modificada -->
+
+    <div class="row">
+        <nav class="navbar navbar-default">
+            <!-- Toggle button per a pantalles petites -->
+
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Menú</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!-- Items de la barra de navegacio, amb les nostres variants d estil -->
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Inici</a></li>
+                        <li><a href="#seccio2">Cursos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+ <!-- CARRUSEL -->      
+
 <section id="seccio1" class="container-fluid">
-<div class="row">
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-<!-- Indicadors -->
-<ol class="carousel-indicators">
-<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-<li data-target="#myCarousel" data-slide-to="1"></li>
-<li data-target="#myCarousel" data-slide-to="2"></li>
-</ol>
- 
-<!-- slides -->
-<div class="carousel-inner" role="listbox">
-<div class="item active">
-<img src="./img/imatge1.jpg" alt="ESO i Batxillerat" width="460" height="345">
-<div class="container">
-<div class="carousel-caption">
-<h2>Acadèmia <strong>esTUdia</strong></h2>
-<h3>Us facilitem l'obtenció de títols oficials.</h3>
-<p class="glyphicon glyphicon-thumbs-up"></p>
-<p><a class="btn btn-lg btn-primary" href="#seccio2" role="button">Més informació</a></p>
-</div>
-</div>
-</div>
- 
-<div class="item">
-<img src="./img/imatge1.jpg" alt="Informàtica" width="460" height="345">
-<div class="container">
-<div class="carousel-caption">
-<h2>Acadèmia <strong>esTUdia</strong></h2>
-<h3>Assoleix les competències TIC.</h3>
-<p class="glyphicon glyphicon-thumbs-up"></p>
-<p><a class="btn btn-lg btn-primary" href="#seccio2" role="button">Més informació</a></p>
-</div>
-</div>
-</div>
- 
-<div class="item">
-<img src="./img/imatge1.jpg" alt="Idiomes" width="460" height="345">
-<div class="container">
-<div class="carousel-caption">
-<h2>Acadèmia <strong>esTUdia</strong></h2>
-<h3>Millora la teva fluència en llengües extrangeres.</h3>
-<p class="glyphicon glyphicon-thumbs-up"></p>
-<p><a class="btn btn-lg btn-primary" href="#seccio2" role="button">Més informació</a></p>
-</div>
-</div>
-</div>
- 
- 
-<!-- Controls a dreta i esquerra -->
-<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-<span class="sr-only">Anterior</span>
-</a>
-<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-<span class="sr-only">Següent</span>
-</a>
-</div>
-</div>
-</div>
+    <div class="row">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Controls del carrusel -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+        
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="img/img1.jpg" alt="ESO i Batxillerat" width="460" height="345">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h2>Acadèmia <strong>esTUdia</strong></h2>
+                    <h3>Us facilitem l'obtenció de títols oficials.</h3>
+                    <p class="glyphicon glyphicon-thumbs-up"></p>
+                    <p><a class="btn btn-lg btn-primary" href="#seccio2" role="button">Més informació</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="item">
+            <img src="img/img1.jpg" alt="Informàtica" width="460" height="345">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h2>Acadèmia <strong>esTUdia</strong></h2>
+                    <h3>Assoleix les competències TIC.</h3>
+                    <p class="glyphicon glyphicon-thumbs-up"></p>
+                    <p><a class="btn btn-lg btn-primary" href="#seccio2" role="button">Més informació</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="item">
+            <img src="img/img1.jpg" alt="Idiomes" width="460" height="345">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h2>Acadèmia <strong>esTUdia</strong></h2>
+                    <h3>Millora la teva fluència en llengües extrangeres.</h3>
+                    <p class="glyphicon glyphicon-thumbs-up"></p>
+                    <p><a class="btn btn-lg btn-primary" href="#seccio2" role="button">Més informació</a></p>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- Controls a dreta i esquerra -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Següent</span>
+        </a>
+        </div>
+        </div>
+    </div>
 </section>
- 
+  <!-- SECCIÓ CENTRAL, grid de dues fileres i una / tres columnes (MD) -->     
+
 <section id="seccio2" class="container">
     <div class="row text-center">
-    <h2>Preparem el vostre futur</h2>
-    <hr class="small" />
+        <h2>Preparem el vostre futur</h2>
+        <hr class="small" />
     </div>
     <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-4">
-    <h3>Títols homologats</h3>
-    <figure></figure>
-    <p>Organitzem cursos per completar la vostra formació reglada. Per això us ajudem a preparar la prova d'accés a grau mig i superior, així com cursos de reforç per a batxillerat.</p>
-    <a href="" class="btn btn-primary">Més...</a>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-    <h3>Competències TIC</h3>
-    <figure></figure>
-    <p>Oferim la certifiació de nivell mitjà i avançat per tal d'acreditar la vostra competència TIC. Alhora, organitzem cursos específics de programació i disseny web. </p>
-    <a href="" class="btn btn-primary">Més...</a>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-    <h3>Idiomes</h3>
-    <figure></figure>
-    <p>Avui en dia és indispensable poder demostrar un nivell intermedi o avançat en llengües estangeres. Segueix el nostre pla per aconseguir millorar el teu nivell.</p>
-    <a href="" class="btn btn-primary">Més...</a>
-    </div>
-    </div>
-    <div class="row text-center">
-    <hr class="small" />
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <h3>Títols homologats</h3>
+            <figure></figure>
+            <p>Organitzem cursos per completar la vostra formació reglada. Per això us ajudem a preparar la prova d'accés a grau mig i superior, així com cursos de reforç per a batxillerat.</p>
+            <a href="" class="btn btn-primary">Més...</a>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <h3>Competències TIC</h3>
+            <figure></figure>
+            <p>Oferim la certifiació de nivell mitjà i avançat per tal d'acreditar la vostra competència TIC. Alhora, organitzem cursos específics de programació i disseny web. </p>
+            <a href="" class="btn btn-primary">Més...</a>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <h3>Idiomes</h3>
+            <figure></figure>
+            <p>Avui en dia és indispensable poder demostrar un nivell intermedi o avançat en llengües estangeres. Segueix el nostre pla per aconseguir millorar el teu nivell.</p>
+            <a href="" class="btn btn-primary">Més...</a>
+        </div>
+        </div>
+        <div class="row text-center">
+        <hr class="small" />
     </div>
 </section>
- 
+ <!-- FOOTER -->      
+
 <section class="container-fluid">
-<div class="row">
-<footer class="panel-footer">
-<p class="text-center">Acadèmia esTUdia</p>
-</footer>
-</div>
+    <div class="row">
+        <footer class="panel-footer">
+            <p class="text-center">Acadèmia esTUdia</p>
+        </footer>
+    </div>
 </section>
- 
 </body>
 </html>

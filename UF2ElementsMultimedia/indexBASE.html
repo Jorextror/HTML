@@ -6,65 +6,69 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <style type="text/css">
-        /* Fons de la barra de navegacio */    
+        /* Fons de la barra de navegacio */
+        .navbar-default {
+          background-color: rgb(24, 188, 156);
+          }    
         /* Quan passem el ratolí per sobre o arriba el focus, canviem color item a la barra */
+        .navbar-default .navbar-nav > li > a:focus {
+          color: rgb(255, 255, 255);
+          }
         /* Colors dels botons */
+        .navbar-default .navbar-nav > li > a {
+          color: rgb(219, 251, 244);
+          }
+          .navbar-default .navbar-nav > li > a:hover,
+          .navbar-default .navbar-nav > .active > a,
+          .navbar-default .navbar-nav > .active > a:hover,
+          .navbar-default .navbar-nav > .active > a:focus {
+          color: rgb(255, 255, 255);
+          background-color: rgb(14, 112, 92);
+          }
         /* Colors dels botons amb ratolí o focus, mancaria l'activacio */
+        .btn-primary:hover, .btn-primary:active , .btn-primary:focus, .btn-primary:active:focus{
+          background-color:rgb(14, 113, 93);
+          border-color: rgb(4, 30, 24);
+          }
         /* Color de la card del footer */
+        .panel-footer {
+          color: rgb(255, 255, 255);
+          background-color: rgb(24, 188, 156);
+          }
         /* Text de la seccio central */
+        div[class*="row"] > h2, div[class*="col-"] > h3 {
+          color:rgb(153, 153, 153);
+          }
         /* S'ha de tocar bootstrap.css (No el MIN!) per aconseguir canvi de color a la lletra de la NavBar */
+        .btn-primary {
+          background-color:rgb(24, 188, 156);
+          border-color: rgb(14, 112, 92)
+          }
         /* Gradient als controls del carousel */
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+        width: 70%;
+        margin: auto;
+        }
+        .carousel-control.right {
+          background-image:linear-gradient(to right, #18bc9c 0%, #DBFBF4 100%);
+        }
+        .carousel-control.left {
+          background-image:linear-gradient(to left, rgb(24, 188, 156) 0%, rgb(219, 251, 244) 100%);
+        }
     </style>
-    <script>
-      .navbar-default {
-      background-color: #18bc9c;
-      }
-      .navbar-default .navbar-nav > li > a {
-      color: #DBFBF4;
-      }
-      .navbar-default .navbar-nav > li > a:hover,
-      .navbar-default .navbar-nav > li > a:focus {
-      color: #fff;
-      }
-      .navbar-default .navbar-nav > .active > a,
-      .navbar-default .navbar-nav > .active > a:hover,
-      .navbar-default .navbar-nav > .active > a:focus {
-      color: #fff;
-      background-color: #0E705C;
-      }
-    </script>
   </head>
 <body>
   <!-- CAPÇALERA -->
   <!-- Contenidor fluid pq ocupi tota la pantalla -->     
-  
-<!-- <section id="header" class="container-fluid">
-  <div class="row">
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Menú</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Inici</a></li>
-            <li><a href="#seccio2">Cursos</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </div>
-</section> -->
 
 <header class="container-fluid" id="header">
+  <div class="row"> 
   <!-- Afegim barra de navegacio modificada -->
   <nav class="navbar navbar-default">
+    <div class="container-fluid">
     <!-- Toggle button per a pantalles petites -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -75,18 +79,21 @@
       </button>
     </div>
     <!-- Items de la barra de navegacio, amb les nostres variants d estil -->
-    <div class="collapse navbar-collapse navbar-toggle">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active text-white"><a href="#">Inici</a></li>
-        <li class=" text-white"><a href="#">Cursos</a></li>
+        <li class="active"><a href="#">Inici</a></li>
+        <li><a href="#">Cursos</a></li>
       </ul>
     </div>
+  </div>
   </nav>
+</div>
 </header>
 
 <!-- CARRUSEL -->      
-<section id="carrusel" class="bg-info">      
+<section id="carrusel" class="container-fluid">      
     <!-- Controls del carrusel -->
+    <div class="row">
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
       <!-- Indicators/dots -->
@@ -96,13 +103,13 @@
         <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
       </div>
       <!-- The slideshow/carousel -->
-      <div class="carousel-inner text-white ">
+      <div class="carousel-inner  ">
         <div class="carousel-item active bg-image text-center  align-bottom align-text-bottom" style="background-image: url('img/img1.jpg'); height: 400px;">
-          <!-- <img src="img/img1.jpg" alt="Los Angeles" class="d-block w-100 h-25"> -->
           <h3 >Academia esTUdia</h3>
           <h5 >Us facilitem l'obtencio de titols oficils.</h5>
           <button class="bg-dark text-while">Més informació</button>
         </div>
+        
         <div class="carousel-item text-center" style="background-image: url('img/img1.jpg'); height: 400px;">
           <h3 >Academia esTUdia</h3>
           <p >Assoleix les competencies TIC.</p>
@@ -122,6 +129,7 @@
         <span class="carousel-control-next-icon"></span>
       </button>
     </div>
+  </div>
 </section>
       
  <!-- SECCIÓ CENTRAL, grid de dues fileres i una / tres columnes (MD) -->     
