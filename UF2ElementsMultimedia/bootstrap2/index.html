@@ -14,6 +14,7 @@
 <style type="text/css">
 /* Fons de la barra de navegacio */
 .navbar-default {
+<<<<<<< HEAD
     background-color: rgb(24, 188, 156);
     }    
   /* Quan passem el ratolí per sobre o arriba el focus, canviem color item a la barra */
@@ -62,7 +63,100 @@
   .carousel-control.left {
     background-image:linear-gradient(to left, rgb(24, 188, 156) 0%, rgb(219, 251, 244) 100%);
   }
+=======
+background-color: #18bc9c;
+}
+.navbar-default .navbar-nav > li > a {
+color: #DBFBF4;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+color: #fff;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+color: #fff;
+background-color: #0E705C;
+}
  
+.btn-primary {
+background-color:#18bc9c;
+border-color: #0E705C
+}
+.btn-primary:hover, .btn-primary:active , .btn-primary:focus, .btn-primary:active:focus{
+background-color:#0E705C;
+border-color: #041E18;
+}
+ 
+.panel-footer {
+color: #fff;
+background-color: #18bc9c;
+}
+ 
+div[class*="row"] > h2, div[class*="col-"] > h3 {
+color:#999999;
+}
+
+
+#mitoast {
+  visibility: hidden;
+  position: fixed;
+  z-index: 1;
+  right: 2.5%;
+  top: 50%;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: .25rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.1);
+  max-width: 310px;
+  width: 310px;
+  background-color: #40e0d0;
+  opacity: 1;
+}
+ 
+#mitoast.mostrar {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 4.6s;
+  animation: fadein 0.5s, fadeout 0.5s 4.6s;
+}
+ 
+@-webkit-keyframes fadein {
+  from {right: 0; opacity: 0;} 
+  to {right: 2.5%; opacity: 1;}
+}
+ 
+@keyframes fadein {
+  from {right: 0; opacity: 0;}
+  to {right: 2.5%; opacity: 1;}
+}
+ 
+@-webkit-keyframes fadeout {
+  from {right: 2.5%; opacity: 1;} 
+  to {right: 0; opacity: 0;}
+}
+ 
+@keyframes fadeout {
+  from {right: 2.5%; opacity: 1;}
+  to {right: 0; opacity: 0;}
+}
+>>>>>>> d3dc6ac8877bae42944f825ef03fc9fcc6ba14e8
+ 
+#mitoast.cerrar {
+  /* visibility: visible; */
+  -webkit-animation: fadeout 0.5s 4.8s;
+  animation: fadeout 0.5s 4.8s;
+}
+ 
+@-webkit-keyframes fadeout {
+  from {right: 2.5%; opacity: 1;} 
+  to {right: 0; opacity: 0;}
+}
+ 
+@keyframes fadeout {
+  from {right: 2.5%; opacity: 1;}
+  to {right: 0; opacity: 0;}
+}
+
 </style>
 </head>
 <body>
@@ -99,6 +193,7 @@
  <!-- CARRUSEL -->      
 
 <section id="seccio1" class="container-fluid">
+<<<<<<< HEAD
     <div class="row">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Controls del carrusel -->
@@ -158,6 +253,79 @@
         </div>
         </div>
     </div>
+=======
+<div class="row">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<!-- Indicadors -->
+<ol class="carousel-indicators">
+<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+<li data-target="#myCarousel" data-slide-to="1"></li>
+<li data-target="#myCarousel" data-slide-to="2"></li>
+</ol>
+ 
+<!-- slides -->
+<div role="alert" id="mitoast" aria-live="assertive" aria-atomic="true" class="toast">
+    <div class="toast-header">
+        <strong class="mr-auto">tous</strong>
+        <small>Més informació <a href="#">aqui</a> </small>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Cerrar" onclick="cerrarToast()"> <span aria-hidden="true">×</span> </button>
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+</div>
+
+<div class="carousel-inner" role="listbox">
+<div class="item active">
+<img src="./img/imatge1.jpg" alt="ESO i Batxillerat" width="460" height="345">
+<div class="container">
+<div class="carousel-caption">
+<h2>Acadèmia <strong>esTUdia</strong></h2>
+<h3>Us facilitem l'obtenció de títols oficials.</h3>
+<p class="glyphicon glyphicon-thumbs-up"></p>
+<p><a class="btn btn-lg btn-primary" role="button" onclick="mostrarToast()">Més informació</a></p>
+
+</div>
+</div>
+</div>
+ 
+<div class="item">
+<img src="./img/imatge1.jpg" alt="Informàtica" width="460" height="345">
+<div class="container">
+<div class="carousel-caption">
+<h2>Acadèmia <strong>esTUdia</strong></h2>
+<h3>Assoleix les competències TIC.</h3>
+<p class="glyphicon glyphicon-thumbs-up"></p>
+<p><a class="btn btn-lg btn-primary" onclick="mostrarToast()" role="button">Més informació</a></p>
+</div>
+</div>
+</div>
+ 
+<div class="item">
+<img src="./img/imatge1.jpg" alt="Idiomes" width="460" height="345">
+<div class="container">
+<div class="carousel-caption">
+<h2>Acadèmia <strong>esTUdia</strong></h2>
+<h3>Millora la teva fluència en llengües extrangeres.</h3>
+<p class="glyphicon glyphicon-thumbs-up"></p>
+<p><a class="btn btn-lg btn-primary" onclick="mostrarToast()" role="button">Més informació</a></p>
+</div>
+</div>
+</div>
+ 
+ 
+<!-- Controls a dreta i esquerra -->
+<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+<span class="sr-only">Anterior</span>
+</a>
+<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+<span class="sr-only">Següent</span>
+</a>
+</div>
+</div>
+</div>
+>>>>>>> d3dc6ac8877bae42944f825ef03fc9fcc6ba14e8
 </section>
   <!-- SECCIÓ CENTRAL, grid de dues fileres i una / tres columnes (MD) -->     
 
@@ -199,5 +367,26 @@
         </footer>
     </div>
 </section>
+<<<<<<< HEAD
+=======
+ 
+
+<script>
+// Con esta función se muestra el Toast 
+function mostrarToast() {
+    var toast = document.getElementById("mitoast");
+    toast.className = "mostrar";
+    setTimeout(function(){ toast.className = toast.className.replace("mostrar", ""); }, 5000);
+}
+ 
+// Con esta función se cierra el Toast 
+function cerrarToast() {
+    var toast = document.getElementById("mitoast");
+    toast.className = "cerrar";
+    toast.className = toast.className.replace("cerrar", "");
+}
+ 
+</script>
+>>>>>>> d3dc6ac8877bae42944f825ef03fc9fcc6ba14e8
 </body>
 </html>
