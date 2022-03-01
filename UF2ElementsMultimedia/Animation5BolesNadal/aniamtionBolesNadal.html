@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bolanadal</title>
+
+    <style>
+        .bolanadal{
+            background-image: url("E:\Documentos\HTML\UF2ElementsMultimedia\Animation5BolesNadal\img\nadal.png");
+            width: 200px;
+            height: 200px;
+            margin: 50px 200px;
+            border: 1px solid;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px;
+            perspective-origin: 50% 50%;
+
+            animation: animation 100s linear infinite;
+        }
+        body{
+            background-color: rgb(171, 250, 250);
+            background-image: url("E:\Documentos\HTML\UF2ElementsMultimedia\Animation5BolesNadal\img\nadal.png");
+
+        }
+        .lacitoNavidenyo{
+            background-color: white;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        @keyframes animation {
+            100%{background-position:0px -3000px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="lacitoNavidenyo">
+        <div class="bolanadal" ></div>
+        <div class="bolanadal" ></div>
+        <div class="bolanadal" ></div>
+    </div>
+</body>
+</html>

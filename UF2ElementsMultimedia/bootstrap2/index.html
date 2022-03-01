@@ -8,13 +8,13 @@
 <!-- Inclusió del framework Bootstrap -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
  
 <!-- Estils que modifiquen i/o amplien el framework -->
 <style type="text/css">
 /* Fons de la barra de navegacio */
 .navbar-default {
-<<<<<<< HEAD
     background-color: rgb(24, 188, 156);
     }    
   /* Quan passem el ratolí per sobre o arriba el focus, canviem color item a la barra */
@@ -63,41 +63,24 @@
   .carousel-control.left {
     background-image:linear-gradient(to left, rgb(24, 188, 156) 0%, rgb(219, 251, 244) 100%);
   }
-=======
-background-color: #18bc9c;
-}
-.navbar-default .navbar-nav > li > a {
-color: #DBFBF4;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-color: #fff;
-}
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-color: #fff;
-background-color: #0E705C;
+ 
+#mitoast.cerrar {
+  /* visibility: visible; */
+  -webkit-animation: fadeout 0.5s 4.8s;
+  animation: fadeout 0.5s 4.8s;
 }
  
-.btn-primary {
-background-color:#18bc9c;
-border-color: #0E705C
-}
-.btn-primary:hover, .btn-primary:active , .btn-primary:focus, .btn-primary:active:focus{
-background-color:#0E705C;
-border-color: #041E18;
+@-webkit-keyframes fadeout {
+  from {right: 2.5%; opacity: 1;} 
+  to {right: 0; opacity: 0;}
 }
  
-.panel-footer {
-color: #fff;
-background-color: #18bc9c;
-}
- 
-div[class*="row"] > h2, div[class*="col-"] > h3 {
-color:#999999;
+@keyframes fadeout {
+  from {right: 2.5%; opacity: 1;}
+  to {right: 0; opacity: 0;}
 }
 
+/* TOAST */
 
 #mitoast {
   visibility: hidden;
@@ -110,7 +93,7 @@ color:#999999;
   box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.1);
   max-width: 310px;
   width: 310px;
-  background-color: #40e0d0;
+  background-color: #ffffff;
   opacity: 1;
 }
  
@@ -139,7 +122,6 @@ color:#999999;
   from {right: 2.5%; opacity: 1;}
   to {right: 0; opacity: 0;}
 }
->>>>>>> d3dc6ac8877bae42944f825ef03fc9fcc6ba14e8
  
 #mitoast.cerrar {
   /* visibility: visible; */
@@ -156,7 +138,6 @@ color:#999999;
   from {right: 2.5%; opacity: 1;}
   to {right: 0; opacity: 0;}
 }
-
 </style>
 </head>
 <body>
@@ -190,10 +171,23 @@ color:#999999;
         </nav>
     </div>
 </header>
+<!-- TOAST -->
+<div role="alert" id="mitoast" aria-live="assertive" aria-atomic="true" class="toast">
+  <div class="toast-header">      
+      <!-- Nombre de la Aplicación -->
+      <strong class="mr-auto">Academia EsTUdia</strong><br>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Cerrar" onclick="cerrarToast()">
+        <span aria-hidden="true">x</span>
+      </button>
+      <!-- Tiempo del Evento realizado -->
+      <small>Siusplau, demana informació <a href="form.html">form</a> </small>
+      <!-- Botón para Cerrar el Toast -->
+
+  </div>
+</div>
  <!-- CARRUSEL -->      
 
 <section id="seccio1" class="container-fluid">
-<<<<<<< HEAD
     <div class="row">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Controls del carrusel -->
@@ -210,8 +204,9 @@ color:#999999;
                 <div class="carousel-caption">
                     <h2>Acadèmia <strong>esTUdia</strong></h2>
                     <h3>Us facilitem l'obtenció de títols oficials.</h3>
-                    <p class="glyphicon glyphicon-thumbs-up"></p>
-                    <p><a class="btn btn-lg btn-primary" href="#seccio2" role="button">Més informació</a></p>
+                    <!-- SPINEEER -->
+                    <div class="spinner-border"></div>
+                    <p><a class="btn btn-lg btn-primary" role="button" onclick="mostrarToast()">Més informació</a></p>
                 </div>
             </div>
         </div>
@@ -222,8 +217,9 @@ color:#999999;
                 <div class="carousel-caption">
                     <h2>Acadèmia <strong>esTUdia</strong></h2>
                     <h3>Assoleix les competències TIC.</h3>
-                    <p class="glyphicon glyphicon-thumbs-up"></p>
-                    <p><a class="btn btn-lg btn-primary" href="#seccio2" role="button">Més informació</a></p>
+                    <!-- SPINEEER -->
+                    <div class="spinner-border"></div>
+                    <p><a class="btn btn-lg btn-primary" role="button" onclick="mostrarToast()">Més informació</a></p>
                 </div>
             </div>
         </div>
@@ -234,12 +230,12 @@ color:#999999;
                 <div class="carousel-caption">
                     <h2>Acadèmia <strong>esTUdia</strong></h2>
                     <h3>Millora la teva fluència en llengües extrangeres.</h3>
-                    <p class="glyphicon glyphicon-thumbs-up"></p>
-                    <p><a class="btn btn-lg btn-primary" href="#seccio2" role="button">Més informació</a></p>
+                    <!-- SPINEEER -->
+                    <div class="spinner-border"></div>
+                    <p><a class="btn btn-lg btn-primary" role="button" onclick="mostrarToast()">Més informació</a></p>
                 </div>
             </div>
         </div>
-        
         
         <!-- Controls a dreta i esquerra -->
         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -253,79 +249,6 @@ color:#999999;
         </div>
         </div>
     </div>
-=======
-<div class="row">
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-<!-- Indicadors -->
-<ol class="carousel-indicators">
-<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-<li data-target="#myCarousel" data-slide-to="1"></li>
-<li data-target="#myCarousel" data-slide-to="2"></li>
-</ol>
- 
-<!-- slides -->
-<div role="alert" id="mitoast" aria-live="assertive" aria-atomic="true" class="toast">
-    <div class="toast-header">
-        <strong class="mr-auto">tous</strong>
-        <small>Més informació <a href="#">aqui</a> </small>
-        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Cerrar" onclick="cerrarToast()"> <span aria-hidden="true">×</span> </button>
-            <span aria-hidden="true">×</span>
-        </button>
-    </div>
-</div>
-
-<div class="carousel-inner" role="listbox">
-<div class="item active">
-<img src="./img/imatge1.jpg" alt="ESO i Batxillerat" width="460" height="345">
-<div class="container">
-<div class="carousel-caption">
-<h2>Acadèmia <strong>esTUdia</strong></h2>
-<h3>Us facilitem l'obtenció de títols oficials.</h3>
-<p class="glyphicon glyphicon-thumbs-up"></p>
-<p><a class="btn btn-lg btn-primary" role="button" onclick="mostrarToast()">Més informació</a></p>
-
-</div>
-</div>
-</div>
- 
-<div class="item">
-<img src="./img/imatge1.jpg" alt="Informàtica" width="460" height="345">
-<div class="container">
-<div class="carousel-caption">
-<h2>Acadèmia <strong>esTUdia</strong></h2>
-<h3>Assoleix les competències TIC.</h3>
-<p class="glyphicon glyphicon-thumbs-up"></p>
-<p><a class="btn btn-lg btn-primary" onclick="mostrarToast()" role="button">Més informació</a></p>
-</div>
-</div>
-</div>
- 
-<div class="item">
-<img src="./img/imatge1.jpg" alt="Idiomes" width="460" height="345">
-<div class="container">
-<div class="carousel-caption">
-<h2>Acadèmia <strong>esTUdia</strong></h2>
-<h3>Millora la teva fluència en llengües extrangeres.</h3>
-<p class="glyphicon glyphicon-thumbs-up"></p>
-<p><a class="btn btn-lg btn-primary" onclick="mostrarToast()" role="button">Més informació</a></p>
-</div>
-</div>
-</div>
- 
- 
-<!-- Controls a dreta i esquerra -->
-<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-<span class="sr-only">Anterior</span>
-</a>
-<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-<span class="sr-only">Següent</span>
-</a>
-</div>
-</div>
-</div>
->>>>>>> d3dc6ac8877bae42944f825ef03fc9fcc6ba14e8
 </section>
   <!-- SECCIÓ CENTRAL, grid de dues fileres i una / tres columnes (MD) -->     
 
@@ -334,28 +257,40 @@ color:#999999;
         <h2>Preparem el vostre futur</h2>
         <hr class="small" />
     </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="container">
+      <div class="card-columns">
+
+        <div class="card">
+          <div class="card-body w-25 p-3">
             <h3>Títols homologats</h3>
             <figure></figure>
             <p>Organitzem cursos per completar la vostra formació reglada. Per això us ajudem a preparar la prova d'accés a grau mig i superior, així com cursos de reforç per a batxillerat.</p>
             <a href="" class="btn btn-primary">Més...</a>
+          </div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
+
+        <div class="card">
+          <div class="card-body w-25 p-3">
             <h3>Competències TIC</h3>
             <figure></figure>
             <p>Oferim la certifiació de nivell mitjà i avançat per tal d'acreditar la vostra competència TIC. Alhora, organitzem cursos específics de programació i disseny web. </p>
             <a href="" class="btn btn-primary">Més...</a>
+          </div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
+
+        <div class="card">
+          <div class="card-body w-25 p-3">
             <h3>Idiomes</h3>
             <figure></figure>
             <p>Avui en dia és indispensable poder demostrar un nivell intermedi o avançat en llengües estangeres. Segueix el nostre pla per aconseguir millorar el teu nivell.</p>
             <a href="" class="btn btn-primary">Més...</a>
+          </div>
         </div>
+
         </div>
         <div class="row text-center">
         <hr class="small" />
+      </div>
     </div>
 </section>
  <!-- FOOTER -->      
@@ -367,26 +302,21 @@ color:#999999;
         </footer>
     </div>
 </section>
-<<<<<<< HEAD
-=======
- 
-
 <script>
+   // TOAST
 // Con esta función se muestra el Toast 
 function mostrarToast() {
-    var toast = document.getElementById("mitoast");
-    toast.className = "mostrar";
-    setTimeout(function(){ toast.className = toast.className.replace("mostrar", ""); }, 5000);
+  var toast = document.getElementById("mitoast");
+  toast.className = "mostrar";
+  setTimeout(function(){ toast.className = toast.className.replace("mostrar", ""); }, 5000);
 }
- 
+
 // Con esta función se cierra el Toast 
 function cerrarToast() {
-    var toast = document.getElementById("mitoast");
-    toast.className = "cerrar";
-    toast.className = toast.className.replace("cerrar", "");
+  var toast = document.getElementById("mitoast");
+  toast.className = "cerrar";
+  toast.className = toast.className.replace("cerrar", "");
 }
- 
 </script>
->>>>>>> d3dc6ac8877bae42944f825ef03fc9fcc6ba14e8
 </body>
 </html>
