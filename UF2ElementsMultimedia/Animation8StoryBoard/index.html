@@ -6,34 +6,111 @@
     <title>Story Board</title>
 </head>
 <style>
+    /* coche va recto, se choca, lo reparan y se hace de noche, luces al cielo, coche salta en rampa y saca alas i cambia color negro, aparece simbolo batman al coche */
+    /* fondo de dia */
     .back{
-        background-image: url("img/back.jpg");
-        width: 800px;
-        height: 500px;
-    }
-    .golem{
-        width: 1000px;
-        height: 1000px;
+        background-image: url("img/fondodia.jpg");
+        background-repeat: repeat-x;
+        width: 700px;
+        height: 300px;
+        left:0;  
+        top:0;  
+        position: absolute;
+        animation:derecha 3s linear 0s;
+        }
+    /* ruedas del coche */
+    .ruedaR{
+        width: 40px;
+        top: 130;
+        left: 192;
         position:absolute;
-        animation: golem 1.5s forwards;
+        animation: rueda 1ms linear infinite;
+        }
+    .ruedaL{
+        width: 40px;
+        top: 130;
+        left: 36;
+        position:absolute;
+        animation: rueda 1ms linear infinite;
     }
-    @keyframes golem {
-        0%{background-image: url("Golem_1/PNG/PNG_Sequences/Kicking/0_Golem_Kicking_000.png");}
-        10%{background-image: url("Golem_1/PNG/PNG_Sequences/Kicking/0_Golem_Kicking_001.png");}
-        20%{background-image: url("Golem_1/PNG/PNG_Sequences/Kicking/0_Golem_Kicking_002.png");}
-        30%{background-image: url("Golem_1/PNG/PNG_Sequences/Kicking/0_Golem_Kicking_003.png");}
-        40%{background-image: url("Golem_1/PNG/PNG_Sequences/Kicking/0_Golem_Kicking_004.png");}
-        50%{background-image: url("Golem_1/PNG/PNG_Sequences/Kicking/0_Golem_Kicking_005.png");}
-        60%{background-image: url("Golem_1/PNG/PNG_Sequences/Kicking/0_Golem_Kicking_006.png");}
-        70%{background-image: url("Golem_1/PNG/PNG_Sequences/Kicking/0_Golem_Kicking_007.png");}
-        80%{background-image: url("Golem_1/PNG/PNG_Sequences/Kicking/0_Golem_Kicking_008.png");}
-        90%{background-image: url("Golem_1/PNG/PNG_Sequences/Kicking/0_Golem_Kicking_009.png");}
-        100%{background-image: url("Golem_1/PNG/PNG_Sequences/Kicking/0_Golem_Kicking_010.png");}
+    /* coche dia */
+    .coche{
+        background-image: url("img/cochedia.png");
+        width: 250px;
+        height: 300px;
+        left: 150px;  
+        top:120;
+        left: -250;
+        position:absolute;
+        animation:coche 3s linear;
+    }
+    /* pj */
+    .pj{
+        visibility: hidden;
+        background-image: url("3/Walk.png");
+        width: 40px;
+        height: 47px;
+        top: 230px;
+        left: 250;
+        position:absolute;
+        animation: pj 2s steps(6, end) ;
+    }
+    /* atroppelado */
+    .pjd{
+        visibility: hidden;
+        background-image: url("3/Walk.png");
+        width: 40px;
+        height: 47px;
+        top: 250px;
+        left: 290;
+        position:absolute;
+        transform: rotate(110deg);
+        animation: pjd 2s linear 2s;
+    }
+    /* fondo */
+    @keyframes derecha {
+        from{
+            background-position:0;  
+        }  
+        to{  
+            background-position:-960px;  
+        }
+    }
+    /* ruedas */
+    @keyframes rueda {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    /* coche */
+    @keyframes coche {
+        0%{left: -250px;}
+        80%{left: 200px;}
+        100%{left: 5000px}
+    }
+    /* pj */
+    @keyframes pj {
+        from {background-position: 0px;
+            visibility: visible;
+        }
+        to {
+            background-position: -285px;
+        }
+    }
+    @keyframes pjd {
+        100%{visibility: visible;}
     }
 </style>
 <body>
-    <div class="back">
-        <div class="golem"></div>
+    <div class="back"></div>
+    <div class="pj"></div>
+    <div class="pjd"></div>
+    <div class="coche">
+        <img src="img/rueda.png" class="ruedaR" alt="">
+        <img src="img/rueda.png" class="ruedaL" alt="">
     </div>
 </body>
 </html>
