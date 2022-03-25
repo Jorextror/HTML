@@ -19,6 +19,17 @@
         position: absolute;
         animation:ciudaddia 3s linear 0s;
         }
+    .carretera{
+        visibility: hidden;
+        background-image: url("img/back.jpg");
+        background-repeat: repeat-x;
+        width: 700px;
+        height: 300px;
+        left:0;  
+        top:0; 
+        position: absolute;
+        animation:carretera 11s linear 3s;
+    }
     /* ruedas del coche */
     .ruedaR{
         width: 40px;
@@ -34,7 +45,7 @@
         position:absolute;
         animation: rueda 3.6s linear ;
     }
-    /* coche dia */
+    /* 1r coche dia */
     .coche{
         background-image: url("img/cochedia.png");
         width: 250px;
@@ -45,6 +56,7 @@
         position:absolute;
         animation:coche 3s linear;
     }
+    /* 2n coche dia */
     .coche1{
         background-image: url("img/cochedia.png");
         width: 250px;
@@ -53,7 +65,7 @@
         top:120;
         left: -250;
         position:absolute;
-        animation:coche1 7s linear 3s;
+        animation:coche1 10s linear 3s;
     }
     /* pj */
     .pj{
@@ -76,25 +88,7 @@
         left: 290;
         position:absolute;
         transform: rotate(110deg);
-        animation: pjd 1s linear 2s;
-    }
-    .carretera{
-        visibility: hidden;
-        background-image: url("img/back.jpg");
-        background-repeat: repeat-x;
-        width: 700px;
-        height: 300px;
-        left:0;  
-        top:0; 
-        position: absolute;
-        animation:carretera 8s linear 3s;
-    }
-    .roca{
-        width: 400px;
-        left: 320px;  
-        top: 30px;
-        position: absolute;
-        animation: roca 4s linear 7s;
+        animation: visibles 1s linear 2s;
     }
     .humo{
         visibility: hidden;
@@ -104,60 +98,69 @@
         position: absolute;
         animation:visibles 5s linear 4s;
     }
-    .mecanicos{
+    .roca{
+        width: 400px;
+        left: 320px;  
+        top: 30px;
+        position: absolute;
+        animation: roca 4s linear 10s;
+    }
+    /* mecanico */
+    .mecanico{
         visibility: hidden;
         width: 100px;
-        left: 200px;  
+        left: -200px;  
         top: 80px;
         position: absolute;
-        animation:visibles 5s linear 4.5s;
+        animation:mecanico 5s linear 4.5s;
     }
-    .mecanicos1{
+    .mecanico1{
         visibility: hidden;
         width: 100px;
-        left: 100px;  
+        left: -200px;  
         top: 70px;
         position: absolute;
-        animation:visibles 5s linear 4.5s;
+        animation:mecanico1 5s linear 4s;
     }
+    /* minero */
     .minero{
         visibility: hidden;
         width: 100px;
         left: 400px;  
-        top: 90px;
+        top: 9000px;
         position: absolute;
-        animation: visibles 5s linear 4.5s;
+        animation: minero 5s linear 4.5s;
     }
     .minero1{
         visibility: hidden;
         width: 60px;
-        left: 350px;  
-        top: -100px;
+        left: 450px;  
+        top: 90px;
         position: absolute;
-        animation: visibles 5s linear 4.5s;
+        animation: minero1 5s linear 4.5s;
     }
     .minero2{
         visibility: hidden;
         width: 60px;
-        left: 300px;  
-        top: -90px;
+        left: 450px;  
+        top: 90px;
         position: absolute;
-        animation: visibles 5s linear 4.5s;
+        animation: minero2 5s linear 4.5s;
     }
     .minero3{
         visibility: hidden;
         width: 60px;
-        left: 280px;  
-        top: -80px;
+        left: 450px;  
+        top: 90px;
         position: absolute;
-        animation: visibles 5s linear 4.5s;
+        animation: minero3 5s linear 4.5s;
     }
     .agujero{
         width: 0px;
-        left: 200px;  
-        top: -80px;
+        left: 400px;  
+        top: 50px;
         position: absolute;
-        animation: increment 5s linear 7s;
+        animation: agujero 10s linear 8s;
     }
     /* fondo */
     @keyframes ciudaddia {
@@ -168,6 +171,11 @@
         to{  
             background-position:-960px;  
         }
+    }
+    @keyframes carretera {
+        0%{visibility: visible;background-position:0;}
+        1%{background-position:-360px;}
+        100%{background-position:-360px;}
     }
     /* ruedas */
     @keyframes rueda {
@@ -187,7 +195,8 @@
     @keyframes coche1 {
         0%{left: -250px;}
         10%{left: 200px;}
-        100%{left: 200px}
+        80%{left: 200px;top:120px;transform: rotate(0deg);}
+        100%{left: 170px;top: -80px;transform: rotate(360deg);}
     }
     /* pj */
     @keyframes pj {
@@ -198,46 +207,93 @@
             background-position: -285px;
         }
     }
+    /* pluses */
     @keyframes visibles {
         100%{visibility: visible;}
     }
     @keyframes roca {
-        0%{width: 400px;visibility: visible;}
-        100%{width: 0px;}
+        0%{transform: rotate(0deg);width: 400px;visibility: visible;}
+        100%{left: 350px;top: 90px;width: 0px;transform: rotate(360deg);}
     }
-    @keyframes increment {
-        0%{width: 0px;}
-        100%{width: 100px;}
+    @keyframes agujero {
+        0%{width: 0px;transform: rotate(0deg);}
+        100%{left:-270px;top:-200px;width: 900px;transform: rotate(3690deg);}
     }
-    @keyframes carretera {
-        0%{visibility: visible;background-position:0;}
-        10%{background-position:-360px;}
-        100%{background-position:-360px;}
+    /* mecanicos */
+    @keyframes mecanico {
+        0%{visibility: visible;}
+        30%{left: 200px;}
+        80%{left: 200px;top: 80px;transform: rotate(0deg);}
+        100%{left: 170px;top: -80px;transform: rotate(360deg);}
+    }
+    @keyframes mecanico1 {
+        0%{visibility: visible;}
+        30%{left: 0px;}
+        80%{left: 0px;top: 80px;transform: rotate(0deg);}
+        100%{left: 170px;top: -80px;transform: rotate(360deg);}
+    }
+    /* mineros */
+    @keyframes minero {
+        0%{visibility: visible;}
+        30%{top: 90px}
+        80%{top: 90px}
+        100%{top: 9000px;}
+    }
+    @keyframes minero1 {
+        0%{visibility: visible;}
+        10%{left: 350px;top: 90px;}
+        30%{left: 350px;top: -90px;}
+        80%{left: 350px;top: -90px;transform: rotate(0deg);}
+        100%{left: 170px;top: -80px;transform: rotate(360deg);}
+
+    }
+    @keyframes minero2 {
+        0%{visibility: visible;}
+        10%{left: 300px;top: 90px;}
+        30%{left: 300px;top: -90px;}
+        80%{left: 300px;top: -90px;transform: rotate(0deg);}
+        100%{left: 170px;top: -80px;transform: rotate(360deg);}
+
+    }
+    @keyframes minero3 {
+        0%{visibility: visible;}
+        10%{left: 270px;top: 90px;}
+        30%{left: 270px;top: -80px;}
+        80%{left: 270px;top: -80px;transform: rotate(0deg);}
+        100%{left: 170px;top: -80px;transform: rotate(360deg);}
     }
 </style>
 <body>
     <div class="ciudaddia"></div>
+
     <div class="carretera" >
+        <img class="agujero" src="img/agujero.png" alt="">
         <img class="roca" src="img/roca.png" alt="">
         <img class="humo" src="img/humo.png" alt="">
     </div>
+
     <div class="pj"></div>
     <div class="pjd"></div>
     <div class="coche">
         <img src="img/rueda.png" class="ruedaR" alt="">
         <img src="img/rueda.png" class="ruedaL" alt="">
     </div>
+
     <div class="coche1">
         <img src="img/rueda.png" class="ruedaR" alt="">
         <img src="img/rueda.png" class="ruedaL" alt="">
 
-        <img class="mecanicos" src="img/mecanico.png" alt="">
-        <img class="mecanicos1" src="img/mecanico1.png" alt="">
+        
+
+        <img class="mecanico" src="img/mecanico.png" alt="">
+        <img class="mecanico1" src="img/mecanico1.png" alt="">
+
+        
         <img class="minero" src="img/minero.png" alt="">
         <img class="minero1" src="img/minero1.png" alt="">
         <img class="minero2" src="img/minero1.png" alt="">
         <img class="minero3" src="img/minero1.png" alt="">
-        <img class="agujero" src="img/agujero.png" style="width: 100px;" alt="">
     </div>
+    
 </body>
 </html>
