@@ -29,14 +29,13 @@
             console.log(ctx);
             cw = 20;
             ch = 150;
-            rotacio=4
+            rotacio=0
     
             // Dibuixar primer rectangle
-            ctx.strokeRect(100, 100, 100, 100);
-            //ctx.fillRect(25, 25, 100, 100);
-            //ctx.clearRect(45, 45, 60, 60);
+            ctx.fillRect(50,50,100,100);
 
             // Translacio origen coordenades a la meitat del canvas
+            ctx.translate(rotacio/2,rotacio/2);
 
             // A partir del punt de translacio anterior, retrocedeix 75p
             // esquerra i a dalt i dibuixa rect de 150x150px
@@ -52,35 +51,43 @@
         function decisio(){
             if(parat==true){
 		// Arranquem animacio i canvi text boto
-
+                girar();
+                setInterval(girar,1);
+                var i=document.getElementById("boto").innerHTML  = "Aturar";
+                parat=false
             }else{
 		// Aturem animacio i canvi text boto
-
+                stopAnimacio()
+                var i=document.getElementById("boto").innerHTML  = "Arrancar";
+                parat=true
             }
 
-        }        
+        }
+    
         
         function girar(){
             // Borra rect de la posicio -cw/2,-ch/2 de tamany cw,ch,
             // recordem que esta trasladat...
-
-
+            ctx.clearRect(0,0,200,200);
+            ctx.beginPath();
+            ctx.stroke();
+            ctx.save();
+            ctx.translate(100,100);
 	        // Tornem a repintar rectangle amb orientacio nova
-
-            rotacio=4
-
+            var time = new Date();
+            ctx.rotate( ((2*Math.PI)/60) * time.getSeconds() + ((2*Math.PI)/60000) * time.getMilliseconds() );
+            ctx.fillRect(-50,-50,100,100);
 
  	        // Reprogramem animacio
-	    
+            ctx.restore();
+
         }
-         
         function stopAnimacio() {
             if (Id) {
                 window.cancelAnimationFrame(Id);
             }
             parat
         }
-        
         function reiniciar(){
 	        // Aturem i repintem en posicio i angle inicial
             rotacio=0;
