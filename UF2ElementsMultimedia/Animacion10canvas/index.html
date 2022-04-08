@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Animacions del Canvas</title>
+    <style>
+        canvas{
+            border: solid;
+        }
+    </style>
+    <script>
+        var c; // Referencia al canvas
+        var ctx; // Context 2D
+        var cw;  // Amplada canvas
+        var ch ; // Alçada canvas
+        var parado; // Boolea indicador de moviment
+        var Id; // Id animacio
+        var rotacio; // Angle animacio
+
+        const rad = Math.PI/180; // Conversio radians
+        const angulo = 5; // Increment rotacio
+        
+        function inicialitza(){
+            console.log("START");
+            c = document.querySelector("canvas");
+            console.log(c);
+            ctx = c.getContext("2d");
+            console.log(ctx);
+            cw = 20;
+            ch = 150;
+            rotacio=0
+    
+            // Dibuixar primer rectangle
+            ctx.fillRect(50,50,100,100);
+
+            // Translacio origen coordenades a la meitat del canvas
+            ctx.translate(rotacio/2,rotacio/2);
+
+            // A partir del punt de translacio anterior, retrocedeix 75p
+            // esquerra i a dalt i dibuixa rect de 150x150px
+
+            parat=true
+
+            // Programem event onClick del canvas
+            c.addEventListener("click", decisio);
+
+            console.log("END");
+        }
+    
+        function decisio(){
+            if(parat==true){
+		// Arranquem animacio i canvi text boto
+                girar();
+                setInterval(girar,1);
+                var i=document.getElementById("boto").innerHTML  = "Aturar";
+                parat=false
+            }else{
+		// Aturem animacio i canvi text boto
+                stopAnimacio()
+                var i=document.getElementById("boto").innerHTML  = "Arrancar";
+                parat=true
+            }
+
+        }
+    
+        
+        function girar(){
+            // Borra rect de la posicio -cw/2,-ch/2 de tamany cw,ch,
+            // recordem que esta trasladat...
+            ctx.clearRect(0,0,200,200);
+            ctx.beginPath();
+            ctx.stroke();
+            ctx.save();
+            ctx.translate(100,100);
+	        // Tornem a repintar rectangle amb orientacio nova
+            var time = new Date();
+            ctx.rotate( ((2*Math.PI)/60) * time.getSeconds() + ((2*Math.PI)/60000) * time.getMilliseconds() );
+            ctx.fillRect(-50,-50,100,100);
+
+ 	        // Reprogramem animacio
+            ctx.restore();
+
+        }
+        function stopAnimacio() {
+            if (Id) {
+                window.cancelAnimationFrame(Id);
+            }
+            parat
+        }
+        function reiniciar(){
+	        // Aturem i repintem en posicio i angle inicial
+            rotacio=0;
+
+	        // Reiniciem moviment
+            decisio();
+        }
+        
+    </script>
+</head>
+<body onLoad="inicialitza();">
+    <div>
+        <canvas id="c" width="500" height="300">Canvas no suportat... </canvas> 
+    </div>
+    
+    <div>
+        <p>
+           <button id="boto" onClick="decisio();">Arrancar</button>
+           <button id="boto2" onClick="reiniciar();">Reiniciar</button>
+        </p> 
+    </div>
+</body>
+</html>
