@@ -1,0 +1,322 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cas Pràctic Bootstrap</title>
+
+<!-- Inclusió del framework Bootstrap -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+ 
+<!-- Estils que modifiquen i/o amplien el framework -->
+<style type="text/css">
+/* Fons de la barra de navegacio */
+.navbar-default {
+    background-color: rgb(24, 188, 156);
+    }    
+  /* Quan passem el ratolí per sobre o arriba el focus, canviem color item a la barra */
+  .navbar-default .navbar-nav > li > a:focus {
+    color: rgb(255, 255, 255);
+    }
+  /* Colors dels botons */
+  .navbar-default .navbar-nav > li > a {
+    color: rgb(219, 251, 244);
+    }
+    .navbar-default .navbar-nav > li > a:hover,
+    .navbar-default .navbar-nav > .active > a,
+    .navbar-default .navbar-nav > .active > a:hover,
+    .navbar-default .navbar-nav > .active > a:focus {
+    color: rgb(255, 255, 255);
+    background-color: rgb(14, 112, 92);
+    }
+  /* Colors dels botons amb ratolí o focus, mancaria l'activacio */
+  .btn-primary:hover, .btn-primary:active , .btn-primary:focus, .btn-primary:active:focus{
+    background-color:rgb(14, 113, 93);
+    border-color: rgb(4, 30, 24);
+    }
+  /* Color de la card del footer */
+  .panel-footer {
+    color: rgb(255, 255, 255);
+    background-color: rgb(24, 188, 156);
+    }
+  /* Text de la seccio central */
+  div[class*="row"] > h2, div[class*="col-"] > h3 {
+    color:rgb(153, 153, 153);
+    }
+  /* S'ha de tocar bootstrap.css (No el MIN!) per aconseguir canvi de color a la lletra de la NavBar */
+  .btn-primary {
+    background-color:rgb(24, 188, 156);
+    border-color: rgb(14, 112, 92)
+    }
+  /* Gradient als controls del carousel */
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+  width: 70%;
+  margin: auto;
+  }
+  .carousel-control.right {
+    background-image:linear-gradient(to right, #18bc9c 0%, #DBFBF4 100%);
+  }
+  .carousel-control.left {
+    background-image:linear-gradient(to left, rgb(24, 188, 156) 0%, rgb(219, 251, 244) 100%);
+  }
+ 
+#mitoast.cerrar {
+  /* visibility: visible; */
+  -webkit-animation: fadeout 0.5s 4.8s;
+  animation: fadeout 0.5s 4.8s;
+}
+ 
+@-webkit-keyframes fadeout {
+  from {right: 2.5%; opacity: 1;} 
+  to {right: 0; opacity: 0;}
+}
+ 
+@keyframes fadeout {
+  from {right: 2.5%; opacity: 1;}
+  to {right: 0; opacity: 0;}
+}
+
+/* TOAST */
+
+#mitoast {
+  visibility: hidden;
+  position: fixed;
+  z-index: 1;
+  right: 2.5%;
+  top: 50%;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: .25rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.1);
+  max-width: 310px;
+  width: 310px;
+  background-color: #ffffff;
+  opacity: 1;
+}
+ 
+#mitoast.mostrar {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 4.6s;
+  animation: fadein 0.5s, fadeout 0.5s 4.6s;
+}
+ 
+@-webkit-keyframes fadein {
+  from {right: 0; opacity: 0;} 
+  to {right: 2.5%; opacity: 1;}
+}
+ 
+@keyframes fadein {
+  from {right: 0; opacity: 0;}
+  to {right: 2.5%; opacity: 1;}
+}
+ 
+@-webkit-keyframes fadeout {
+  from {right: 2.5%; opacity: 1;} 
+  to {right: 0; opacity: 0;}
+}
+ 
+@keyframes fadeout {
+  from {right: 2.5%; opacity: 1;}
+  to {right: 0; opacity: 0;}
+}
+ 
+#mitoast.cerrar {
+  /* visibility: visible; */
+  -webkit-animation: fadeout 0.5s 4.8s;
+  animation: fadeout 0.5s 4.8s;
+}
+ 
+@-webkit-keyframes fadeout {
+  from {right: 2.5%; opacity: 1;} 
+  to {right: 0; opacity: 0;}
+}
+ 
+@keyframes fadeout {
+  from {right: 2.5%; opacity: 1;}
+  to {right: 0; opacity: 0;}
+}
+</style>
+</head>
+<body>
+   <!-- CAPÇALERA -->
+  <!-- Contenidor fluid pq ocupi tota la pantalla -->      
+<header id="header" class="container-fluid">
+      <!-- Afegim barra de navegacio modificada -->
+
+    <div class="row">
+        <nav class="navbar navbar-default">
+            <!-- Toggle button per a pantalles petites -->
+
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Menú</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!-- Items de la barra de navegacio, amb les nostres variants d estil -->
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a role="link" href="#">Inici</a></li>
+                        <li><a role="link" href="#seccio2">Cursos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<!-- TOAST -->
+<div role="alert" id="mitoast" aria-live="assertive" aria-atomic="true" class="toast">
+  <div class="toast-header">      
+      <!-- Nombre de la Aplicación -->
+      <strong class="mr-auto">Academia EsTUdia</strong><br>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Cerrar" onclick="cerrarToast()">
+        <span aria-hidden="true">x</span>
+      </button>
+      <!-- Tiempo del Evento realizado -->
+      <small>Siusplau, demana informació <a role="link" href="form.html">form</a> </small>
+      <!-- Botón para Cerrar el Toast -->
+
+  </div>
+</div>
+ <!-- CARRUSEL -->      
+
+<section id="seccio1" class="container-fluid">
+    <div class="row">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Controls del carrusel -->
+            <ol role="tree" class="carousel-indicators"> <!-- 'tree' omite el contenido descendiente -->
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+        
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img role="img" src="img/img1.jpg" alt="ESO i Batxillerat" width="460" height="345">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h2>Acadèmia <strong>esTUdia</strong></h2>
+                    <h3>Us facilitem l'obtenció de títols oficials.</h3>
+                    <!-- SPINEEER -->
+                    <div class="spinner-border"></div>
+                    <p><a role="link" class="btn btn-lg btn-primary" role="button" onclick="mostrarToast()">Més informació</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="item">
+            <img role="img" src="img/img1.jpg" alt="Informàtica" width="460" height="345">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h2>Acadèmia <strong>esTUdia</strong></h2>
+                    <h3>Assoleix les competències TIC.</h3>
+                    <!-- SPINEEER -->
+                    <div class="spinner-border"></div>
+                    <p><a role="link" class="btn btn-lg btn-primary" role="button" onclick="mostrarToast()">Més informació</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="item">
+            <img role="img" src="img/img1.jpg" alt="Idiomes" width="460" height="345">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h2>Acadèmia <strong>esTUdia</strong></h2>
+                    <h3>Millora la teva fluència en llengües extrangeres.</h3>
+                    <!-- SPINEEER -->
+                    <div class="spinner-border"></div>
+                    <p><a role="link" class="btn btn-lg btn-primary" role="button" onclick="mostrarToast()">Més informació</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Controls a dreta i esquerra -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Següent</span>
+        </a>
+        </div>
+        </div>
+    </div>
+</section>
+  <!-- SECCIÓ CENTRAL, grid de dues fileres i una / tres columnes (MD) -->     
+
+<section id="seccio2" class="container">
+    <div class="row text-center">
+        <h2>Preparem el vostre futur</h2>
+        <hr class="small" />
+    </div>
+    <div class="container">
+      <div class="card-columns">
+
+        <div class="card">
+          <div class="card-body w-25 p-3">
+            <h3 tabindex="0">Títols homologats</h3>
+            <figure></figure>
+            <p tabindex="0">Organitzem cursos per completar la vostra formació reglada. Per això us ajudem a preparar la prova d'accés a grau mig i superior, així com cursos de reforç per a batxillerat.</p>
+            <a role="link" href="" class="btn btn-primary">Més...</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body w-25 p-3">
+            <h3 tabindex="0">Competències TIC</h3>
+            <figure></figure>
+            <p tabindex="0">Oferim la certifiació de nivell mitjà i avançat per tal d'acreditar la vostra competència TIC. Alhora, organitzem cursos específics de programació i disseny web. </p>
+            <a role="link" href="" class="btn btn-primary">Més...</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body w-25 p-3">
+            <h3 tabindex="0">Idiomes</h3>
+            <figure></figure>
+            <p tabindex="0">Avui en dia és indispensable poder demostrar un nivell intermedi o avançat en llengües estangeres. Segueix el nostre pla per aconseguir millorar el teu nivell.</p>
+            <a role="link" href="" class="btn btn-primary">Més...</a>
+          </div>
+        </div>
+
+        </div>
+        <div class="row text-center">
+        <hr class="small" />
+      </div>
+    </div>
+</section>
+ <!-- FOOTER -->      
+
+<section class="container-fluid">
+    <div class="row">
+        <footer class="panel-footer">
+            <p class="text-center">Acadèmia esTUdia</p>
+        </footer>
+    </div>
+</section>
+<script>
+   // TOAST
+// Con esta función se muestra el Toast 
+function mostrarToast() {
+  var toast = document.getElementById("mitoast");
+  toast.className = "mostrar";
+  setTimeout(function(){ toast.className = toast.className.replace("mostrar", ""); }, 5000);
+}
+
+// Con esta función se cierra el Toast 
+function cerrarToast() {
+  var toast = document.getElementById("mitoast");
+  toast.className = "cerrar";
+  toast.className = toast.className.replace("cerrar", "");
+}
+</script>
+</body>
+</html>
